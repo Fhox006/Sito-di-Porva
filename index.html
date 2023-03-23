@@ -1,1 +1,18 @@
-<!DOCTYPE html> <html> <head> <title>Pagina Principale</title> </head> <body> <p>Clicca sul link per visitare la seconda pagina:</p> <form> Inserisci il tuo nome: <input type="text" name="nome"> <input type="submit" value="Invia"> </form> <a href="pagina2.html">Vai alla Pagina 2</a> </body> </html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pagina Principale</title>
+    <script>
+      function salvaNome() {
+        var nome = document.getElementById("nome").value;
+        document.cookie = "nome=" + nome + "; path=/";
+      }
+    </script>
+  </head>
+  <body>
+    <p>Inserisci il tuo nome:</p>
+    <input type="text" id="nome" />
+    <p>Clicca sul link per visitare la seconda pagina:</p>
+    <a href="pagina2.html" onclick="salvaNome()">Vai alla Pagina 2</a>
+  </body>
+</html>
